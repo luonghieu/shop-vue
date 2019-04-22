@@ -12,8 +12,10 @@
 */
 
 Route::get('{any}', function () {
-    if (Request::is('admin*')) {
-        return view('admin');
+    if (Request::is('admin*') || Request::is('loginAdmin')) {
+        return view('backend');
+    } else {
+        return view('frontend');
     }
 
 })->where('any', '.*');
