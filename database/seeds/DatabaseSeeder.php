@@ -11,6 +11,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $tables = [
+            'categories',
+            'products',
+            'users'
+        ];
+
+        $this->command->info('Truncating existing tables');
+
+        foreach ($tables as $table) {
+            DB::statement('TRUNCATE TABLE ' . $table . ' RESTART IDENTITY CASCADE;');
+        }
+        $this->command->info('Creating seeder data');
+
+        $this->call('UsersTableSeeder');
+        $this->call('CategoriesTableSeeder');
+        $this->call('ProductsTableSeeder');
     }
 }
