@@ -18,9 +18,9 @@
                     </li>
 
                     <li v-on:click="setActiveRoute">
-                        <router-link :to="{ name: 'tables'}" :class="currentRouteName == 'tables' ? 'active' : ''">
+                        <router-link :to="{ name: 'products'}" :class="currentRouteName == 'products' ? 'active' : ''">
                             <i class="lnr lnr-dice"></i>
-                            <span>Table</span>
+                            <span>Products</span>
                         </router-link>
                     </li>
                 </ul>
