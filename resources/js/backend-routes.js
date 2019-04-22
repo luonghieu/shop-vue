@@ -1,6 +1,6 @@
 import Dashboard from './components/backend/Dashboard';
 import Elements from './components/backend/Elements';
-import Table from './components/backend/Table';
+import ProductList from './components/backend/products/List';
 import NotFound from './components/backend/NotFound';
 
 let routes = [
@@ -15,9 +15,9 @@ let routes = [
         name: 'elements',
     },
     {
-        path: 'tables',
-        component: Table,
-        name: 'tables',
+        path: 'products',
+        component: ProductList,
+        name: 'products',
     },
     {
         path: '*',
